@@ -6,10 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Rigidbody2D body;
+    private Animator anim;
+    private bool grounded;
 
     private void Awake()
     {
+        //Grab references from rigidbody and animator from object  
         body = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         
     }
@@ -26,11 +30,36 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1,1,1);
         
 
-        if(Input.GetKey(KeyCode.Space))
-        {
-            body.velocity = new Vector2(body.velocity.x, speed);
-        }
+        if(Input.GetKey(KeyCode.Space) && grounded)  //allow player to jump only when its grounded
+            Jump();
+
+        //Set animator parameters
+        anim.SetBool("run", horizontalInput != 0);
+        anim.SetBool("grounded", grounded);
     }
+
+    private void Jump()
+    {
+        body.velocity = new Vector2(body.velocity.x, speed);
+        anim.SetTrigger("jump");
+        grounded = false;
+    }
+
+    //when some component with rigidbody touches with the other object which has rigidbody
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.tag == "Ground")
+            grounded = true;
+        
+    }
+
+
+
+
+
+
+
+
+
 /*
     // Start is called before the first frame update
     void Start()
