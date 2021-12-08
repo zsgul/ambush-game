@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float jumpPower;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D boxCollider;
     private float wallJumpCooldown;
+    private float horizontalInput;
 
     private void Awake()
     {
@@ -21,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update() {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");
 
         
         //Flip player when moving horizontally
@@ -38,11 +40,8 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("grounded", isGrounded());
 
         //Wall jump logic
-        if(wallJumpCooldown < 0.2f)
+        if(wallJumpCooldown > 0.2f)
         {
-            if(Input.GetKey(KeyCode.Space) && isGrounded())  //allow player to jump only when its grounded
-            Jump();
-
             body.velocity = new Vector2(horizontalInput * speed,body.velocity.y);
         
 
@@ -50,9 +49,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 body.gravityScale = 0;
                 body.velocity = Vector2.zero;
-            }else
+            }
+            else
                 body.gravityScale = 3;
-        }else
+
+            if(Input.GetKey(KeyCode.Space))  //allow player to jump only when its grounded
+                Jump();
+        }
+        else
             wallJumpCooldown += Time.deltaTime;
 
     }
@@ -60,8 +64,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, speed);
-        anim.SetTrigger("jump");
+        if(isGrounded())
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpPower);
+            anim.SetTrigger("jump");
+        }
+        else if(onWall() && !isGrounded())
+        {
+            if(horizontalInput == 0)
+            {
+                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0 ); //+ facing right, - facing left on x coordinate //- before mathf is there for to change player's facing way
+                body.velocity = new Vector3(-Mathf.Sign(transform.localScale.x),transform.localScale.y, transform.localScale.z ); //+ facing right, - facing left on x coordinate //- before mathf is there for to change player's facing way
+
+            }
+            else
+                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6 ); //+ facing right, - facing left on x coordinate //- before mathf is there for to change player's facing way
+        
+            wallJumpCooldown = 0;
+            
+        }
+   
     }
 
     //when some component with rigidbody touches with the other object which has rigidbody
