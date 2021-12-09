@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39663779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.592, y: 0.859, z: 0}
+  m_LocalPosition: {x: 1.846, y: -0.665, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 537814159}
@@ -753,6 +753,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0
+  firePoint: {fileID: 39663780}
+  fireballs:
+  - {fileID: 62180006}
+  - {fileID: 1301704601}
+  - {fileID: 1430468757}
+  - {fileID: 1841421932}
+  - {fileID: 2116729785}
+  - {fileID: 868728168}
+  - {fileID: 973633343}
+  - {fileID: 174862618}
+  - {fileID: 659180299}
+  - {fileID: 1689208420}
 --- !u!1 &659180299
 GameObject:
   m_ObjectHideFlags: 0
