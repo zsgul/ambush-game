@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
 
         //object pool fireballs
         fireballs[0].transform.position = firePoint.position;
-        fireballs[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x);
+        fireballs[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
     
 }
