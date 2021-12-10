@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
     private bool hit;
     private float direction;
+    private float lifetime;
 
     private Animator anim;
     private BoxCollider2D boxCollider;
@@ -24,6 +25,9 @@ public class Projectile : MonoBehaviour
 
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
+
+        lifetime += Time.deltaTime;
+        if(lifetime > 5) gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) 
@@ -35,6 +39,7 @@ public class Projectile : MonoBehaviour
 
     public void SetDirection(float _direction) 
     {
+        lifetime = 0;
         direction = _direction;
         gameObject.SetActive(true);
         hit = false;
