@@ -57,3 +57,12 @@ The following packages were added:
   com.unity.analytics@3.6.11
   com.unity.purchasing@3.2.2
   com.unity.xr.legacyinputhelpers@2.1.8
+
+=== Tue Dec 14 13:51:32 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.11.2 to 1.13.5
+  com.unity.purchasing from version 3.2.2 to 4.0.3
