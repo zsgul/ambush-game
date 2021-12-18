@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab642ab487ac9e4784966a820bfaad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kucukcubuk: {fileID: 5148315150379955399, guid: 36fffc9fb51967e42ab9941c5a662cbb, type: 3}
+  kucukCubuk: {fileID: 1522949877}
 --- !u!1 &1098452098
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +302,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1522949877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5148315150379955399, guid: 36fffc9fb51967e42ab9941c5a662cbb, type: 3}
+  m_PrefabInstance: {fileID: 5148315149642965133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1825226090
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602e739cd12194744920e213029b5e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "h\u0131z": 120
+  hiz: 120
 --- !u!1 &1861269953
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c17479cbe53c143b222e9c9c2161fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "D\xF6nenB\xFCy\xFCk\xC7ember": {fileID: 1825226090}
+  DonenBuyukCember: {fileID: 1825226090}
   SpawnLokasyonu: {fileID: 606821187}
 --- !u!4 &1861269955
 Transform:
@@ -467,6 +472,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5148315150379955392, guid: 36fffc9fb51967e42ab9941c5a662cbb, type: 3}
+      propertyPath: yonetici
+      value: 
+      objectReference: {fileID: 1861269953}
     - target: {fileID: 5148315150379955392, guid: 36fffc9fb51967e42ab9941c5a662cbb, type: 3}
       propertyPath: "y\xF6netici"
       value: 
