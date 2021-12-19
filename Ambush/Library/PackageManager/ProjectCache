@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637743947570000000
+      ticks: 637755212350000000
     m_Hash: 410474463
   m_LockFileStatus:
     m_FilePath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637743947570000000
+      ticks: 637755212350000000
     m_Hash: 1698220034
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -443,8 +443,10 @@ m_PackageAssets:
         - 1.13.5
         - 1.14.1
         - 1.14.4
+        - 1.14.7
         - 1.15.1
         - 1.15.4
+        - 1.15.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -461,8 +463,10 @@ m_PackageAssets:
         - 1.13.5
         - 1.14.1
         - 1.14.4
+        - 1.14.7
         - 1.15.1
         - 1.15.4
+        - 1.15.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
