@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d59a531048c6840a540e35fe9e5362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hiz: 40
+  hiz: 100
   hareketKisitliMi: 0
   yonetici: {fileID: 0}
 --- !u!1 &5148315151508457386

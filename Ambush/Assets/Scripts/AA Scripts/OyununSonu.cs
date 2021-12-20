@@ -9,7 +9,7 @@ public class OyununSonu : MonoBehaviour
 
    public void OyunuBitir()
     {
-        //DonenBuyukCember Scriptini devre d��� b�rakma
+        //DonenBuyukCember Scriptini devre disi birakma
         DonenBuyukCember.GetComponent<DonenBuyukCember>().enabled = false;
         SpawnLokasyonu.GetComponent<KucukCubukSpawner>().enabled = false;
     }

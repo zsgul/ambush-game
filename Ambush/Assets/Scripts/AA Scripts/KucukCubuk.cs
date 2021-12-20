@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KucukCubuk : MonoBehaviour
 {
-    //�ubuk b�y�k �embere gidecek ve �ubuklarla �arp���rsa duracak.
+    //cubuk buyuk cembere gidecek ve cubuklara carparsa duracak.
 
     Rigidbody2D rb;
     public float hiz;
@@ -14,20 +14,20 @@ public class KucukCubuk : MonoBehaviour
 
     void Start()
     {
-        //kod i�erisindeki rigidbody yi direkt k���k �emberin rigidbodysine e�itlemek
+        //kod icerisindeki rigidbody yi direkt kucuk cemberin rigidbodysine esitlemek
         rb = GetComponent<Rigidbody2D>();
 
-        //k���k�ember prefab� i�erisine y�eticiyi ekleyemedi�imiz i�in kod �zerinden verdik
+        //kucukcember prefabi icerisine yoneticiyi ekleyemedigimiz icin kod uzerinden verdik
         yonetici = GameObject.FindGameObjectWithTag("Yonetici");
     }
 
     
     void Update()
     {
-        // hareket k�s�tl� de�ilse durmadan yukar� ��ks�n
+        // hareket kisitli degilse durmadan yukari ciksin
         if(hareketKisitliMi== false)
         {
-            rb.MovePosition(rb.position + Vector2.up * hiz * Time.deltaTime); //rb nin y ekseninde s�rekli hareket etmesini sa�l�yoruz.
+            rb.MovePosition(rb.position + Vector2.up * hiz * Time.deltaTime); //rb nin y ekseninde surekli hareket etmesini sagliyoruz.
         }
         
     }
