@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class KucukCubuk : MonoBehaviour
 {
     //cubuk buyuk cembere gidecek ve cubuklara carparsa duracak.
@@ -10,7 +11,8 @@ public class KucukCubuk : MonoBehaviour
     public float hiz;
     public bool hareketKisitliMi;
     public GameObject yonetici;
-
+    
+   
 
     void Start()
     {
@@ -36,8 +38,8 @@ public class KucukCubuk : MonoBehaviour
 
      void OnTriggerEnter2D(Collider2D col)
     {
-        //k���k �emberin temas durumunda durmas�n� sa�l�yoruz. Trigger yerine Collision da kullan�labilirdi.
-        //Triggerda i�inden ge�ilebilir triggerda en ufak bir temasta durmas�n� sa�lad�k
+        //kucuk cemberin temas durumunda durmasini sagliyoruz. Trigger yerine Collision da kullan�labilirdi.
+        //Triggerda icinden gecilebilir triggerda en ufak bir temasta durmasini sagladik
 
         if (col.gameObject.tag == "DonenBuyukCember")
         {
@@ -48,7 +50,8 @@ public class KucukCubuk : MonoBehaviour
         if (col.gameObject.tag == "KucukCember") //kucuk cemberler birbirlerine degerse
         {
             yonetici.GetComponent<OyununSonu>().OyunuBitir();
-            
+            //Oyunu kaybettiğine dair bir text eklenecek prefab içerisine text eklemeyi öğren!!!!!!!
+
         }
 
 

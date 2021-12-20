@@ -10,8 +10,9 @@ public class KucukCubukSpawner : MonoBehaviour
     public int spawnCount = 0;
     public GameObject yonetici;
     public float timeRemaining = 10;
-    public Text sayac;
+    public Text sayac, bitis;
     public bool timerStart = false;
+    
     
 
 
@@ -22,18 +23,25 @@ public class KucukCubukSpawner : MonoBehaviour
         {
             KucukCubukSpawn();
             spawnCount++;
-            if (spawnCount == 10)
+            if (spawnCount == 10 && timeRemaining > 0)
             {
                 yonetici.GetComponent<OyununSonu>().OyunuBitir();
+                bitis.text = "KAZANDINIZ!!";
             }
         }
- 
 
         if (timeRemaining > 0 && timerStart)
         {
             timeRemaining -= Time.deltaTime;
             sayac.text = "" + Mathf.Round(timeRemaining);
         }
+        if(timeRemaining < 0 && spawnCount<10)
+        {
+            yonetici.GetComponent<OyununSonu>().OyunuBitir();
+            bitis.text = "KAYBETTİNİZ!!";
+        }
+
+
     }
 
     void KucukCubukSpawn()
