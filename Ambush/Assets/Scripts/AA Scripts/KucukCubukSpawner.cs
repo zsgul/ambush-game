@@ -12,9 +12,6 @@ public class KucukCubukSpawner : MonoBehaviour
     public float timeRemaining = 10;
     public Text sayac, bitis;
     public bool timerStart = false;
-    
-    
-
 
 
     void Update()
@@ -35,7 +32,7 @@ public class KucukCubukSpawner : MonoBehaviour
             timeRemaining -= Time.deltaTime;
             sayac.text = "" + Mathf.Round(timeRemaining);
         }
-        if(timeRemaining < 0 && spawnCount<10)
+        if(timeRemaining < 0 && spawnCount < 10)
         {
             yonetici.GetComponent<OyununSonu>().OyunuBitir();
             bitis.text = "KAYBETTİNİZ!!";
