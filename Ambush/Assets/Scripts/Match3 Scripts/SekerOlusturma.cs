@@ -8,7 +8,7 @@ public class SekerOlusturma : MonoBehaviour
        public int row, column;
        public float x = -7.79f, y = -2.88f;
        public int urunX = 0, urunY = 0;
-       public Urun[,] o_urunler;
+       public static Urun[,] o_urunler;
     
 
     void Start()
