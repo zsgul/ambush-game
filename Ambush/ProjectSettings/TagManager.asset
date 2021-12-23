@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - KucukCember
   - Yonetici
+  - Secim
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Urunler
+    uniqueID: 2621666777
+    locked: 0
+  - name: Secim
+    uniqueID: 3076184963
+    locked: 0
   - name: Background
     uniqueID: 813804163
     locked: 0
@@ -56,7 +63,4 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 1799776875
-    locked: 0
-  - name: Urunler
-    uniqueID: 2621666777
     locked: 0
