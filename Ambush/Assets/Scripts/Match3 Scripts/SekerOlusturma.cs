@@ -37,9 +37,12 @@ public class SekerOlusturma : MonoBehaviour
 
     public void SekerOlustur()
     {
-        GameObject yeni_urun = GameObject.Instantiate(RandomUrun(), new Vector2(x, y+10), Quaternion.identity);
+        GameObject rastgele_urun_objesi = RandomUrun();
+
+        GameObject yeni_urun = GameObject.Instantiate(rastgele_urun_objesi, new Vector2(x, y+10), Quaternion.identity);
         Urun urun = yeni_urun.GetComponent<Urun>();//yavaþ yavaþ düþmesini saðlýyoruz position deðiþikliði
         urun.YeniKonum(x, y);
+        urun.renk = rastgele_urun_objesi.name;
         o_urunler[urunX, urunY] = urun; //matris oluþturarak bütün þekerlere istenilen yerden ulaþma
         //Debug.Log(o_urunler[urunX, urunY]);
     }
