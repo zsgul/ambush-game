@@ -147,10 +147,12 @@ public class Urun : MonoBehaviour
 
                 if (xEslesenler > 2)
                 {
-                    Debug.Log("X ekseninden sil");
+                 //   Debug.Log("X ekseninden sil");
                     for (int g = 0; g < xEslesenler; g++)
                     {
-                        Debug.Log(sonXEkseni);
+                        Debug.Log(SekerOlusturma.o_urunler[i,sonXEkseni].x);
+
+                        Debug.Log(SekerOlusturma.o_urunler[i, sonXEkseni].y);
                         sonXEkseni--;
                     }
                 }
@@ -170,8 +172,8 @@ public class Urun : MonoBehaviour
 
                 if (SekerOlusturma.o_urunler[i, j].renk == SekerOlusturma.o_urunler[i+1, j].renk)
                 {
-                    Debug.Log("Y ekseni oynadý");
-                    Debug.Log(SekerOlusturma.o_urunler[i, j]);
+                    //Debug.Log("Y ekseni oynadý");
+                    //Debug.Log(SekerOlusturma.o_urunler[i, j]);
                 }
             }
         }
