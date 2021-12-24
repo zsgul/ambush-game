@@ -121,7 +121,7 @@ public class Urun : MonoBehaviour
         SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY] = SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY];
         SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY] = tempUrunKoordinat[0, 0];
 
-        int xEslesenler = 1;
+        int xEslesenler = 1; int sonXEkseni=0;
 
         for (int i = 0; i < 4; i++)
         {
@@ -134,9 +134,10 @@ public class Urun : MonoBehaviour
 
                 if (SekerOlusturma.o_urunler[i, j].renk == SekerOlusturma.o_urunler[i, j+1].renk)
                 {
+                    sonXEkseni = j + 1;
                     xEslesenler++;
-                    Debug.Log("X ekseni oynadý");
-                    Debug.Log(xEslesenler);
+                   // Debug.Log("X ekseni oynadý");
+                   // Debug.Log(xEslesenler);
                     //Debug.Log(SekerOlusturma.o_urunler[i, j]);
                 }
                 else
@@ -147,12 +148,11 @@ public class Urun : MonoBehaviour
                 if (xEslesenler > 2)
                 {
                     Debug.Log("X ekseninden sil");
-                   /* for (int g = 0; g < xEslesenler; g++)
+                    for (int g = 0; g < xEslesenler; g++)
                     {
-
-                    }*/
-
-
+                        Debug.Log(sonXEkseni);
+                        sonXEkseni--;
+                    }
                 }
             }
             xEslesenler = 1;
