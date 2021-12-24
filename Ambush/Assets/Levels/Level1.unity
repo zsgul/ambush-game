@@ -76365,6 +76365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1512054078}
   - component: {fileID: 1512054079}
+  - component: {fileID: 1512054080}
   m_Layer: 0
   m_Name: Start point
   m_TagString: Untagged
@@ -76437,6 +76438,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1512054080
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512054077}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11558a9d4a0f44e7e9caf6f87aeeab38, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1515930601
 GameObject:
   m_ObjectHideFlags: 0
@@ -77912,6 +77932,8 @@ GameObject:
   - component: {fileID: 1792277584}
   - component: {fileID: 1792277585}
   - component: {fileID: 1792277586}
+  - component: {fileID: 1792277587}
+  - component: {fileID: 1792277588}
   m_Layer: 0
   m_Name: Finish point
   m_TagString: Untagged
@@ -77994,7 +78016,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0189531, y: -0.10898429}
@@ -78010,6 +78032,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26092833, y: 0.4220314}
   m_EdgeRadius: 0
+--- !u!114 &1792277587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792277583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bcbefafc501543e8a24300b6a079105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1792277588
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792277583}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 50e0853a48ba6442f8acf76839c9477a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1824131486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6990928771745629549, guid: a072b28746a8d44f4a81d2aab859b508, type: 3}
@@ -79824,6 +79877,10 @@ PrefabInstance:
     - target: {fileID: 137147175075899249, guid: a072b28746a8d44f4a81d2aab859b508, type: 3}
       propertyPath: m_Name
       value: Pineapple
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356010553831967476, guid: a072b28746a8d44f4a81d2aab859b508, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6990928771745629549, guid: a072b28746a8d44f4a81d2aab859b508, type: 3}
       propertyPath: m_RootOrder
