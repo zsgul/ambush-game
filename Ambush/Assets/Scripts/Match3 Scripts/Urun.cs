@@ -82,9 +82,9 @@ public class Urun : MonoBehaviour
                     ilkSecilenUrun.HedefKonum = ikinciSecilenUrun.transform.position; // yer deðiþtirsinler.
                     ikinciSecilenUrun.HedefKonum = ilkSecilenUrun.transform.position;
                     ilkSecilenUrun.yerDegisim = true;
+                    ikinciSecilenUrun.yerDegisim = true;
 
                     DegiskenDuzenle();
-                    ikinciSecilenUrun.yerDegisim = true;
                     ilkSecilenUrun = null;
                     // ilkSecilenUrun.X_ekseni_kontrol();
                 }
@@ -157,7 +157,6 @@ public class Urun : MonoBehaviour
 
         for (int y = ilkSecilenHedefKonumY; y < 7; y++)
         {
-            Debug.Log("1. For " + ilkSecilenHedefKonumY);
             if (y == 6)
             {
                 continue;
@@ -180,7 +179,6 @@ public class Urun : MonoBehaviour
 
         for (int y = ilkSecilenHedefKonumY; y > 0; y--)
         {
-            Debug.Log("2. For " + ilkSecilenHedefKonumY);
             if (y == 0)
             {
                 continue;
@@ -211,7 +209,6 @@ public class Urun : MonoBehaviour
 
         for (int y = ikinciSecilenHedefKonumY; y < 7; y++)
         {
-            Debug.Log("3. For " + ikinciSecilenHedefKonumY);
             if (y == 6)
             {
                 continue;
@@ -234,7 +231,6 @@ public class Urun : MonoBehaviour
 
         for (int y = ikinciSecilenHedefKonumY; y > 0; y--)
         {
-            Debug.Log("4. For " + ikinciSecilenHedefKonumY);
             if (y == 0)
             {
                 continue;
@@ -264,7 +260,7 @@ public class Urun : MonoBehaviour
         }
 
 
-        /*for (int x = ilkSecilenHedefKonumX; x < 4; x++)
+        for (int x = ilkSecilenHedefKonumX; x < 4; x++)
         {
             if (x == 3)
             {
@@ -276,9 +272,15 @@ public class Urun : MonoBehaviour
                 satirYEslesenler++;
                 silinecekYUrunler.Add(SekerOlusturma.o_urunler[ilkSecilenHedefKonumXTemp + 1, ilkSecilenHedefKonumY]);
             }
+            else
+            {
+                break;
+            }
 
             ilkSecilenHedefKonumXTemp++;
         }
+
+        ilkSecilenHedefKonumXTemp = ilkSecilenHedefKonumX;
 
         for (int x = ilkSecilenHedefKonumX; x < 0; x--)
         {
@@ -292,8 +294,22 @@ public class Urun : MonoBehaviour
                 satirYEslesenler++;
                 silinecekYUrunler.Add(SekerOlusturma.o_urunler[ilkSecilenHedefKonumXTemp - 1, ilkSecilenHedefKonumY]);
             }
+            else
+            {
+                break;
+            }
 
             ilkSecilenHedefKonumXTemp--;
+        }
+
+        if (satirYEslesenler > 2)
+        {
+            satirYEslesenler = 1;
+        }
+        else
+        {
+            satirYEslesenler = 1;
+            silinecekYUrunler.Clear();
         }
 
         for (int x = ikinciSecilenHedefKonumX; x < 4; x++)
@@ -308,9 +324,15 @@ public class Urun : MonoBehaviour
                 satirYEslesenler++;
                 silinecekYUrunler.Add(SekerOlusturma.o_urunler[ikinciSecilenHedefKonumXTemp + 1, ikinciSecilenHedefKonumY]);
             }
+            else
+            {
+                break;
+            }
 
             ikinciSecilenHedefKonumXTemp++;
         }
+
+        ikinciSecilenHedefKonumXTemp = ikinciSecilenHedefKonumX;
 
         for (int x = ikinciSecilenHedefKonumX; x < 0; x--)
         {
@@ -324,23 +346,68 @@ public class Urun : MonoBehaviour
                 satirYEslesenler++;
                 silinecekYUrunler.Add(SekerOlusturma.o_urunler[ikinciSecilenHedefKonumXTemp - 1, ikinciSecilenHedefKonumY]);
             }
+            else
+            {
+                break;
+            }
 
             ikinciSecilenHedefKonumXTemp--;
-        }*/
+        }
 
+        if (satirYEslesenler > 2)
+        {
+            satirYEslesenler = 1;
+        }
+        else
+        {
+            satirYEslesenler = 1;
+            silinecekYUrunler1.Clear();
+        }
 
-        Debug.Log("satirXEslesenler " + satirXEslesenler);
-        Debug.Log("satirYEslesenler " + satirYEslesenler);
         Debug.Log(silinecekXUrunler.Count);
+        Debug.Log(silinecekXUrunler1.Count);
+        Debug.Log(silinecekYUrunler.Count);
+        Debug.Log(silinecekYUrunler1.Count);
 
-
-
-
-
-
-
-
-
+        if (silinecekXUrunler.Count > 2 || silinecekXUrunler1.Count>2 || silinecekYUrunler.Count>2 || silinecekYUrunler1.Count>2)
+        {
+            //Destroy(gameObject);
+            if (silinecekXUrunler.Count > 2)
+            {
+                foreach (var item in silinecekXUrunler)
+                {
+                    Destroy(item.gameObject);
+                }
+            }
+            if(silinecekXUrunler1.Count>2)
+            {
+                foreach (var item in silinecekXUrunler1)
+                {
+                    Destroy(item.gameObject);
+                }
+            }
+            if(silinecekYUrunler.Count > 2)
+            {
+                foreach (var item in silinecekYUrunler)
+                {
+                    Destroy(item.gameObject);
+                }
+            }
+            else
+            {
+                foreach (var item in silinecekYUrunler1)
+                {
+                    Destroy(item.gameObject);
+                }
+            }
+                
+        }
+        else
+        {
+            ilkSecilenUrun.yerDegisim = false;
+            ikinciSecilenUrun.yerDegisim = false;
+        }
+       
 
 
         /*int xEslesenler = 1; int sonXEkseni = 0, yEslesenler = 1, sonYEkseni = 0;
