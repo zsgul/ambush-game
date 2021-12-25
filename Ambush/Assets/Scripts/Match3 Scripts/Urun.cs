@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Urun : MonoBehaviour
 {
+    public GameObject[] sekerObje;
     float x, y;
     bool DussunMu = true;
     GameObject SecimAraci;
@@ -27,9 +28,10 @@ public class Urun : MonoBehaviour
         silinecekYUrunler = new List<Urun>();
         silinecekYUrunler1 = new List<Urun>();
         SecimAraci = GameObject.FindGameObjectWithTag("Secim");
+
     }
 
-    
+
     void Update()
     {
         if (DussunMu)
@@ -53,7 +55,7 @@ public class Urun : MonoBehaviour
     {
         x = _x;
         y = _y;
- 
+
     }
 
     void OnMouseDown()
@@ -86,14 +88,14 @@ public class Urun : MonoBehaviour
 
                     DegiskenDuzenle();
                     ilkSecilenUrun = null;
-                    // ilkSecilenUrun.X_ekseni_kontrol();
+
                 }
                 else
                 {
                     ilkSecilenUrun = ikinciSecilenUrun;
                 }
             }
-                ikinciSecilenUrun = null;
+            ikinciSecilenUrun = null;
         }
     }
 
@@ -101,9 +103,9 @@ public class Urun : MonoBehaviour
     {
         int ilkUrunKoordinatX = 0, ilkUrunKoordinatY = 0, ikinciUrunKoordinatX = 0, ikinciUrunKoordinatY = 0;
 
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
-            for(int j = 0; j < 7; j++)
+            for (int j = 0; j < 7; j++)
             {
                 if (SekerOlusturma.o_urunler[i, j].x == ilkSecilenUrun.x && SekerOlusturma.o_urunler[i, j].y == ilkSecilenUrun.y)
                 {
@@ -122,6 +124,7 @@ public class Urun : MonoBehaviour
         tempUrunKoordinat[0, 0] = SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY];
         SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY] = SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY];
         SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY] = tempUrunKoordinat[0, 0];
+
 
         //ilkSecilenUrun.yerDegisim = false;
         //ikinciSecilenUrun.yerDegisim = false;
@@ -145,13 +148,15 @@ public class Urun : MonoBehaviour
             }
         }
 
-        //Debug.Log(ilkSecilenHedefKonumX + " " + ilkSecilenHedefKonumY);
-        //Debug.Log(ikinciSecilenHedefKonumX + " " + ikinciSecilenHedefKonumY);
-
         silinecekXUrunler.Add(SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY]);
         silinecekXUrunler1.Add(SekerOlusturma.o_urunler[ikinciSecilenHedefKonumX, ikinciSecilenHedefKonumY]);
         silinecekYUrunler.Add(SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY]);
         silinecekYUrunler1.Add(SekerOlusturma.o_urunler[ikinciSecilenHedefKonumX, ikinciSecilenHedefKonumY]);
+
+        /*silinecekXUrunler.Add(SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY]);
+        silinecekXUrunler1.Add(SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY]);
+        silinecekYUrunler.Add(SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY]);
+        silinecekYUrunler1.Add(SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY]);*/
 
         int ilkSecilenHedefKonumXTemp = ilkSecilenHedefKonumX, ilkSecilenHedefKonumYTemp = ilkSecilenHedefKonumY, ikinciSecilenHedefKonumXTemp = ikinciSecilenHedefKonumX, ikinciSecilenHedefKonumYTemp = ikinciSecilenHedefKonumY;
 
@@ -364,227 +369,86 @@ public class Urun : MonoBehaviour
             silinecekYUrunler1.Clear();
         }
 
-        Debug.Log(silinecekXUrunler.Count);
-        Debug.Log(silinecekXUrunler1.Count);
-        Debug.Log(silinecekYUrunler.Count);
-        Debug.Log(silinecekYUrunler1.Count);
+        //float itemX = 0, itemY = 0;
 
-        if (silinecekXUrunler.Count > 2 || silinecekXUrunler1.Count>2 || silinecekYUrunler.Count>2 || silinecekYUrunler1.Count>2)
+        if (silinecekXUrunler.Count > 2 || silinecekXUrunler1.Count > 2 || silinecekYUrunler.Count > 2 || silinecekYUrunler1.Count > 2)
         {
-            //Destroy(gameObject);
             if (silinecekXUrunler.Count > 2)
             {
                 foreach (var item in silinecekXUrunler)
                 {
+                    //itemX = item.x;
+                    //itemY = item.y;
                     Destroy(item.gameObject);
+                    //uretUrun(itemX, itemY);
                 }
             }
-            if(silinecekXUrunler1.Count>2)
+            if (silinecekXUrunler1.Count > 2)
             {
                 foreach (var item in silinecekXUrunler1)
                 {
+                    //itemX = item.x;
+                    //itemY = item.y;
                     Destroy(item.gameObject);
+                    //uretUrun(itemX, itemY);
                 }
             }
-            if(silinecekYUrunler.Count > 2)
+            if (silinecekYUrunler.Count > 2)
             {
                 foreach (var item in silinecekYUrunler)
                 {
+                    //itemX = item.x;
+                    //itemY = item.y;
                     Destroy(item.gameObject);
+                    //uretUrun(itemX, itemY);
                 }
             }
-            else
+            if (silinecekYUrunler1.Count > 2)
             {
                 foreach (var item in silinecekYUrunler1)
                 {
+                    //itemX = item.x;
+                    //itemY = item.y;
                     Destroy(item.gameObject);
+                    //uretUrun(itemX, itemY);
                 }
             }
-                
         }
         else
         {
             ilkSecilenUrun.yerDegisim = false;
             ikinciSecilenUrun.yerDegisim = false;
+            tempUrunKoordinat[0, 0] = SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY];
+            SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY] = SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY];
+            SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY] = tempUrunKoordinat[0, 0];
         }
-       
-
-
-        /*int xEslesenler = 1; int sonXEkseni = 0, yEslesenler = 1, sonYEkseni = 0;
-
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 7; j++)
-            {
-                if (j == 6)
-                {
-                    continue;
-                }
-
-                if (SekerOlusturma.o_urunler[i, j].renk == SekerOlusturma.o_urunler[i, j+1].renk)
-                {
-                    sonXEkseni = j + 1;
-                    xEslesenler++;
-                }
-                else
-                {
-                    if (xEslesenler > 2)
-                    {
-                        for (int g = 0; g < xEslesenler; g++)
-                        {
-                            silinecekUrunler.Add(SekerOlusturma.o_urunler[i, sonXEkseni]);
-                            sonXEkseni--;
-                        }
-                    }
-                    xEslesenler = 1;
-                }
-            }
-            xEslesenler = 1;
-        }
-
-        for (int j = 0; j < 7; j++)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                
-                if (i ==3 )
-                {
-                    continue;
-                }
-
-                if (SekerOlusturma.o_urunler[i, j].renk == SekerOlusturma.o_urunler[i+1, j].renk)
-                {
-                    sonYEkseni = i + 1;
-                    yEslesenler++;
-                }
-                else
-                {
-                    if (yEslesenler > 2)
-                    {
-                        for (int g = 0; g < yEslesenler; g++)
-                        {
-                            silinecekUrunler.Add(SekerOlusturma.o_urunler[sonYEkseni, j]);
-                            sonYEkseni--;
-                        }
-                    }
-                    yEslesenler = 1;
-                }
-            }
-            yEslesenler = 1;
-        }
-
-        for (int i = 0; i < silinecekUrunler.Count; i++)
-        {
-            // ... Okey
-        }*/
 
     }
 
     void YerDegis()
-    {    
+    {
         transform.position = Vector3.Lerp(transform.position, HedefKonum, 0.1f);
     }
 
-   /* void X_ekseni_kontrol()
+    /*void uretUrun(float x, float y)
     {
-       // Debug.Log(urun);
-        int ilkUrunKoordinatX = 0, ilkUrunKoordinatY = 0, ikinciUrunKoordinatX = 0, ikinciUrunKoordinatY = 0;
 
         for (int i = 0; i < 4; i++)
         {
             for (int j = 0; j < 7; j++)
             {
-                if (SekerOlusturma.o_urunler[i, j].x == ilkSecilenUrun.x && SekerOlusturma.o_urunler[i, j].y == ilkSecilenUrun.y)
+                if (SekerOlusturma.o_urunler[i, j].x == x && SekerOlusturma.o_urunler[i, j].y == y)
                 {
-                    ilkUrunKoordinatX = i;
-                    ilkUrunKoordinatY = j;
+                    Debug.Log(x + " => " + y);
+                    int rnd = Random.Range(0, sekerObje.Length);
+                    GameObject yeniUrun = GameObject.Instantiate(sekerObje[rnd], new Vector2(x, y), Quaternion.identity);
+                    Urun urun = yeniUrun.GetComponent<Urun>();
+                    urun.YeniKonum(x, y);
+                    urun.renk = sekerObje[rnd].name;
+                    //SekerOlusturma.o_urunler[i, j].transform.position = new Vector2(10, 10);
+                    SekerOlusturma.o_urunler[i, j] = urun;
                 }
             }
         }
-
-        Urun urun_sagdaki = SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY];
-        if (renk == urun_sagdaki.renk)
-        {
-            urun_x_ekseni.Add(urun_sagdaki);
-        }
-        else
-        {
-           // break;
-        }
     }*/
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* for (int i = x+1; i < SekerOlusturma.o_urunler.GetLength(0);i++) //0 dersem x ekseni için vericek onun yerine  i<6 da denilebilir belki?
-         {
-             Urun urun_sagdaki = SekerOlusturma.o_urunler[i,y];
-             if(renk== urun_sagdaki.renk)
-             {
-                 urun_x_ekseni.Add(urun_sagdaki);
-             }
-             else
-             {
-                 break;
-             }
-         }
-         for (int i = x-1; i>0; i--) //0 dersem x ekseni için vericek onun yerine  i<6 da denilebilir belki?
-         {
-             Urun urun_sagdaki = SekerOlusturma.o_urunler[i, y];
-             if (renk == urun_sagdaki.renk)
-             {
-                 urun_x_ekseni.Add(urun_sagdaki);
-             }
-             else
-             {
-                 break;
-             }
-         }
-
-
-
-     }*/
-        /* void Y_ekseni_kontrol()
-         {
-             for (int i = y + 1; i < SekerOlusturma.o_urunler.GetLength(0); i++) //0 dersem x ekseni için vericek onun yerine  i<6 da denilebilir belki?
-             {
-                 Urun urun_sagdaki = SekerOlusturma.o_urunler[x,i];
-                 if (renk == urun_sagdaki.renk)
-                 {
-                     urun_y_ekseni.Add(urun_sagdaki);
-                 }
-                 else
-                 {
-                     break;
-                 }
-             }
-             for (int i = y - 1; i > 0; i--) //0 dersem x ekseni için vericek onun yerine  i<6 da denilebilir belki?
-             {
-                 Urun urun_sagdaki = SekerOlusturma.o_urunler[x, i];
-                 if (renk == urun_sagdaki.renk)
-                 {
-                     urun_y_ekseni.Add(urun_sagdaki);
-                 }
-                 else
-                 {
-                     break;
-                 }
-             }
-         }*/
-
-    }
+}
