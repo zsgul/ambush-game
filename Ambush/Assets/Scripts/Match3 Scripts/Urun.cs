@@ -20,6 +20,7 @@ public class Urun : MonoBehaviour
     public List<Urun> silXUrunler;
     public List<Urun> silYUrunler;
     public string renk;
+    public int ilkUrunKoordinatX = 0, ilkUrunKoordinatY = 0, ikinciUrunKoordinatX = 0, ikinciUrunKoordinatY = 0;
 
     void Start()
     {
@@ -85,6 +86,29 @@ public class Urun : MonoBehaviour
                     //KONTROL SAÐLANMADI DÝKKAT!!
                     ilkSecilenUrun.HedefKonum = ikinciSecilenUrun.transform.position; // yer deðiþtirsinler.
                     ikinciSecilenUrun.HedefKonum = ilkSecilenUrun.transform.position;
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        for (int j = 0; j < 7; j++)
+                        {
+                            if (SekerOlusturma.o_urunler[i, j].x == ilkSecilenUrun.x && SekerOlusturma.o_urunler[i, j].y == ilkSecilenUrun.y)
+                            {
+                                ilkUrunKoordinatX = i;
+                                ilkUrunKoordinatY = j;
+                            }
+
+                            if (SekerOlusturma.o_urunler[i, j].x == ikinciSecilenUrun.x && SekerOlusturma.o_urunler[i, j].y == ikinciSecilenUrun.y)
+                            {
+                                ikinciUrunKoordinatX = i;
+                                ikinciUrunKoordinatY = j;
+                            }
+                        }
+                    }
+
+                    tempUrunKoordinat[0, 0] = SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY];
+                    SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY] = SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY];
+                    SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY] = tempUrunKoordinat[0, 0];
+
                     ilkSecilenUrun.yerDegisim = true;
                     ikinciSecilenUrun.yerDegisim = true;
 
@@ -103,7 +127,7 @@ public class Urun : MonoBehaviour
 
     void DegiskenDuzenle()
     {
-        int ilkUrunKoordinatX = 0, ilkUrunKoordinatY = 0, ikinciUrunKoordinatX = 0, ikinciUrunKoordinatY = 0;
+        int ilkSecilenHedefKonumX = 0, ilkSecilenHedefKonumY = 0, ikinciSecilenHedefKonumX = 0, ikinciSecilenHedefKonumY = 0, satirXEslesenler = 1, satirYEslesenler = 1;
 
         for (int i = 0; i < 4; i++)
         {
@@ -111,34 +135,10 @@ public class Urun : MonoBehaviour
             {
                 if (SekerOlusturma.o_urunler[i, j].x == ilkSecilenUrun.x && SekerOlusturma.o_urunler[i, j].y == ilkSecilenUrun.y)
                 {
-                    ilkUrunKoordinatX = i;
-                    ilkUrunKoordinatY = j;
-                }
-
-                if (SekerOlusturma.o_urunler[i, j].x == ikinciSecilenUrun.x && SekerOlusturma.o_urunler[i, j].y == ikinciSecilenUrun.y)
-                {
-                    ikinciUrunKoordinatX = i;
-                    ikinciUrunKoordinatY = j;
-                }
-            }
-        }
-
-        tempUrunKoordinat[0, 0] = SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY];
-        SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY] = SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY];
-        SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY] = tempUrunKoordinat[0, 0];
-
-        int ilkSecilenHedefKonumX = 0, ilkSecilenHedefKonumY = 0, ikinciSecilenHedefKonumX = 0, ikinciSecilenHedefKonumY = 0, satirXEslesenler = 1, satirYEslesenler = 1;
-
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 7; j++)
-            {
-                if (SekerOlusturma.o_urunler[i, j].x == ilkSecilenUrun.HedefKonum.x && SekerOlusturma.o_urunler[i, j].HedefKonum.y == ilkSecilenUrun.y)
-                {
                     ilkSecilenHedefKonumX = i;
                     ilkSecilenHedefKonumY = j;
                 }
-                if (SekerOlusturma.o_urunler[i, j].x == ikinciSecilenUrun.HedefKonum.x && SekerOlusturma.o_urunler[i, j].HedefKonum.y == ikinciSecilenUrun.y)
+                if (SekerOlusturma.o_urunler[i, j].x == ikinciSecilenUrun.x && SekerOlusturma.o_urunler[i, j].y == ikinciSecilenUrun.y)
                 {
                     ikinciSecilenHedefKonumX = i;
                     ikinciSecilenHedefKonumY = j;
@@ -386,23 +386,47 @@ public class Urun : MonoBehaviour
         if (silXUrunler.Count > 1)
         {
             //silinecekXUrunler.Add(SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY]);
-            foreach (var item in silXUrunler)
+
+            for (int i = 0; i < 4; i++)
             {
-                Destroy(item.gameObject);
-                uretUrun(item.x, item.y);
+                for (int j = 0; j < 7; j++)
+                {
+                    foreach (var item in silXUrunler)
+                    {
+                        if (SekerOlusturma.o_urunler[i, j].x == item.x && SekerOlusturma.o_urunler[i, j].y == item.y)
+                        {
+                            Debug.Log(i + " => " + j);
+                            Debug.Log(item.x + " => " + item.y);
+                            uretUrun(i, j, item.x, item.y);
+                            Destroy(item.gameObject);
+                        }
+                    }
+                }
             }
-            silinecekXUrunler.Clear();
+           
         }
 
         if (silYUrunler.Count > 1)
         {
-            silinecekYUrunler.Add(SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY]);
-            foreach (var item in silYUrunler)
+            //silYUrunler.Add(SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY]);
+
+            for (int i = 0; i < 4; i++)
             {
-                Destroy(item.gameObject);
-                uretUrun(item.x, item.y);
+                for (int j = 0; j < 7; j++)
+                {
+                    foreach (var item in silYUrunler)
+                    {
+                        if (SekerOlusturma.o_urunler[i, j].x == item.x && SekerOlusturma.o_urunler[i, j].y == item.y)
+                        {
+                            Debug.Log(i + " => " + j);
+                            Debug.Log(item.x + " => " + item.y);
+                            uretUrun(i, j, item.x, item.y);
+                            Destroy(item.gameObject);
+                        }
+                    }
+                }
             }
-            silinecekYUrunler.Clear();
+
         }
         if (silXUrunler.Count == 0 && silYUrunler.Count == 0)
         {
@@ -412,6 +436,9 @@ public class Urun : MonoBehaviour
             SekerOlusturma.o_urunler[ilkUrunKoordinatX, ilkUrunKoordinatY] = SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY];
             SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY] = tempUrunKoordinat[0, 0];
         }
+
+        silXUrunler.Clear();
+        silYUrunler.Clear();
     }
 
     void YerDegis()
@@ -419,49 +446,17 @@ public class Urun : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, HedefKonum, 0.1f);
     }
 
-    void uretUrun(float x, float y)
+    void uretUrun(int x, int y, float koordinatX, float koordinatY)
     {
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 7; j++)
-            {
-                if (SekerOlusturma.o_urunler[i, j].x == x && SekerOlusturma.o_urunler[i, j].y == y)
-                {
-                    //int rndX = Random.Range(0, 4);
-                    //int rndY = Random.Range(0, 7);
+        Vector3 position;
+        int rnd = Random.Range(0, sekerObje.Length);
+        GameObject yeniUrun = GameObject.Instantiate(sekerObje[rnd], new Vector2(x, y), Quaternion.identity);
+        Urun urun = yeniUrun.GetComponent<Urun>();
+        urun.YeniKonum(koordinatX, koordinatY);
+        urun.renk = sekerObje[rnd].name;
+        urun.x = koordinatX;
+        urun.y = koordinatY;
+        SekerOlusturma.o_urunler[x, y] = urun;
 
-                    Vector3 position;
-                    int rnd = Random.Range(0, sekerObje.Length);
-                    GameObject yeniUrun = GameObject.Instantiate(sekerObje[rnd], new Vector2(x, y), Quaternion.identity);
-                    Urun urun = yeniUrun.GetComponent<Urun>();
-                    urun.YeniKonum(x, y);
-                    urun.renk = sekerObje[rnd].name;
-
-                    //Debug.Log(SekerOlusturma.o_urunler[i, j].renk);
-                    //Debug.Log(SekerOlusturma.o_urunler[rndX, rndY].renk);
-                    position.x = SekerOlusturma.o_urunler[i, j].transform.position.x;
-                    position.y = SekerOlusturma.o_urunler[i, j].transform.position.y;
-                    position.z = SekerOlusturma.o_urunler[i, j].transform.position.z;
-                    //SekerOlusturma.o_urunler[i, j] = SekerOlusturma.o_urunler[rndX, rndY];
-                    //SekerOlusturma.o_urunler[i, j].transform.position = position;
-                    SekerOlusturma.o_urunler[i, j] = urun;
-                    //SekerOlusturma.o_urunler[i, j].transform.position = position;
-                }
-            }
-        }
-    }
-
-    void urunleriListele()
-    {
-
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 7; j++)
-            {
-                Debug.Log(SekerOlusturma.o_urunler[i, j].renk);
-                //Destroy(SekerOlusturma.o_urunler[i, j].gameObject);
-                //GameObject.Instantiate(SekerOlusturma.o_urunler[i, j], new Vector2(SekerOlusturma.o_urunler[i, j].x, SekerOlusturma.o_urunler[i, j].y), Quaternion.identity);
-            }
-        }
     }
 }
