@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2451224868150536413}
   - component: {fileID: 4260887717745050985}
   - component: {fileID: 6608988334400007379}
-  - component: {fileID: -7994800238820837487}
+  - component: {fileID: 517799501283489038}
   m_Layer: 0
   m_Name: characters_0007
   m_TagString: Untagged
@@ -110,9 +110,14 @@ MonoBehaviour:
   silinecekXUrunler1: []
   silinecekYUrunler: []
   silinecekYUrunler1: []
-  urun_y_ekseni: []
+  silXUrunler: []
+  silYUrunler: []
   renk: 
---- !u!61 &-7994800238820837487
+  ilkUrunKoordinatX: 0
+  ilkUrunKoordinatY: 0
+  ikinciUrunKoordinatX: 0
+  ikinciUrunKoordinatY: 0
+--- !u!61 &517799501283489038
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +130,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.015849978, y: -0.09192932}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,5 +141,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7066667, y: 1.7066667}
+  m_Size: {x: 0.91417223, y: 0.952212}
   m_EdgeRadius: 0
