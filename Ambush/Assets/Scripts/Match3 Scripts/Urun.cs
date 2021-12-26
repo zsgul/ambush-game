@@ -422,9 +422,9 @@ public class Urun : MonoBehaviour
 
     void uretUrun(int x, int y, float koordinatX, float koordinatY)
     {
-        Vector3 position;
+      
         int rnd = Random.Range(0, sekerObje.Length);
-        GameObject yeniUrun = GameObject.Instantiate(sekerObje[rnd], new Vector2(x, y), Quaternion.identity);
+        GameObject yeniUrun = GameObject.Instantiate(sekerObje[rnd], new Vector2(koordinatX, koordinatY), Quaternion.identity);//Vector2(x,y)
         Urun urun = yeniUrun.GetComponent<Urun>();
         urun.YeniKonum(koordinatX, koordinatY);
         urun.renk = sekerObje[rnd].name;
