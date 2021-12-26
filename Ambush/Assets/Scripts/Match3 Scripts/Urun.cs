@@ -373,22 +373,36 @@ public class Urun : MonoBehaviour
         silYUrunler.AddRange(silinecekYUrunler);
         silYUrunler.AddRange(silinecekYUrunler1);
 
+        /*Vector2 position;
+
+        Debug.Log(SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY].x);
+        Debug.Log(SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY].y);
+        Debug.Log(ikinciUrunKoordinatX + " " + ikinciUrunKoordinatY);
+        position.x = SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY].x;
+        position.y = SekerOlusturma.o_urunler[ikinciUrunKoordinatX, ikinciUrunKoordinatY].y;
+
+        SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY].transform.position = position;*/
+
         if (silXUrunler.Count > 1)
         {
+            //silinecekXUrunler.Add(SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY]);
             foreach (var item in silXUrunler)
             {
                 Destroy(item.gameObject);
                 uretUrun(item.x, item.y);
             }
+            silinecekXUrunler.Clear();
         }
 
         if (silYUrunler.Count > 1)
         {
+            silinecekYUrunler.Add(SekerOlusturma.o_urunler[ilkSecilenHedefKonumX, ilkSecilenHedefKonumY]);
             foreach (var item in silYUrunler)
             {
                 Destroy(item.gameObject);
                 uretUrun(item.x, item.y);
             }
+            silinecekYUrunler.Clear();
         }
         if (silXUrunler.Count == 0 && silYUrunler.Count == 0)
         {
