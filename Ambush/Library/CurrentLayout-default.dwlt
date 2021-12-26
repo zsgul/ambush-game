@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Game
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 678, y: 342}
+  m_MaxSize: {x: 12003, y: 8042}
   vertical: 0
-  controlID: 108
+  controlID: 120
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 109
+  controlID: 64
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 110
+  controlID: 40
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,9 +318,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.0286925, y: 2.2259803, z: -0.74638623}
+    m_Target: {x: 3.772082, y: 4.6318774, z: -5.772793}
     speed: 2
-    m_Value: {x: -1.0286925, y: 2.2259803, z: -0.74638623}
+    m_Value: {x: 3.772082, y: 4.6318774, z: -5.772793}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -371,9 +371,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 10.234384
     speed: 2
-    m_Value: 10
+    m_Value: 10.234384
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -428,7 +428,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 44fbffff
+      m_ExpandedIDs: 46fbffff9c440000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -604,21 +604,21 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Match3 Scripts
+    - Assets/Scripts/Match3 Scripts/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Match3 Scripts
+  - Assets/Scripts/Match3 Scripts/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Berkan\Documents\GitHub\ambush-game\Ambush
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: aa450000
-    m_LastClickedID: 17834
+    m_SelectedIDs: 1e470000
+    m_LastClickedID: 18206
     m_ExpandedIDs: 00000000a6450000a8450000aa45000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -672,8 +672,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 16080000
-    m_LastClickedInstanceID: 2070
+    m_SelectedInstanceIDs: 96440000
+    m_LastClickedInstanceID: 17558
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000bc6500006e410000d64100008c430000be420000464200009442000040730000a85b000000000000
     m_RenameOverlay:
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -30650
+  m_LastSelectedObjectID: 17552
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
