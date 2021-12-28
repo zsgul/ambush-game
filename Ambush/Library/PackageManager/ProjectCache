@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637756111016049077
+      ticks: 637762860907859927
     m_Hash: 2156401629
   m_LockFileStatus:
     m_FilePath: C:/Users/Berkan/Documents/GitHub/ambush-game/Ambush/Packages/packages-lock.json
@@ -569,6 +569,7 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
+        - 3.0.9
         compatible:
         - 1.0.2
         - 1.0.6
@@ -595,6 +596,7 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
+        - 3.0.9
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework

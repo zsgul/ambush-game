@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    /*
     //Room camera
     [SerializeField]private float speed;
     private float currentPosx;
@@ -27,5 +28,18 @@ public class CameraController : MonoBehaviour
     public void MovetoNewRoom(Transform _newRoom)
     {
         currentPosx = _newRoom.position.x;
+    }
+    */
+
+    [SerializeField]private Transform player;
+    [SerializeField]private float aheadDistance;
+    [SerializeField]private float cameraSpeed;
+    private float lookAhead;
+
+    private void Update()
+    {
+        lookAhead = Mathf.Lerp(lookAhead, (aheadDistance * player.localScale.x), Time.deltaTime * cameraSpeed);
+        transform.position = new Vector3(player.position.x + lookAhead, player.position.y + 1, transform.position.z);
+        
     }
 }
