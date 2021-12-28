@@ -4,63 +4,42 @@ using UnityEngine;
 
 public class KucukCubuk : MonoBehaviour
 {
-    //ï¿½ubuk bï¿½yï¿½k ï¿½embere gidecek ve ï¿½ubuklarla ï¿½arpï¿½ï¿½ï¿½rsa duracak.
-
     Rigidbody2D rb;
     public float hiz;
     public bool hareketKisitliMi;
     public GameObject yonetici;
 
-
     void Start()
     {
-        //kod iï¿½erisindeki rigidbody yi direkt kï¿½ï¿½ï¿½k ï¿½emberin rigidbodysine eï¿½itlemek
+        //kod icerisindeki rigidbody yi direkt kucuk cemberin rigidbodysine esitlemek
         rb = GetComponent<Rigidbody2D>();
-
-        //kï¿½ï¿½ï¿½kï¿½ember prefabï¿½ iï¿½erisine yï¿½eticiyi ekleyemediï¿½imiz iï¿½in kod ï¿½zerinden verdik
+        //kucukcember prefabi icerisine yoneticiyi ekleyemedigimiz icin kod uzerinden verdik
         yonetici = GameObject.FindGameObjectWithTag("Yonetici");
     }
 
-    
     void Update()
     {
-        // hareket kï¿½sï¿½tlï¿½ deï¿½ilse durmadan yukarï¿½ ï¿½ï¿½ksï¿½n
-        if(hareketKisitliMi== false)
+        // hareket kisitli degilse durmadan yukari ciksin
+        if (hareketKisitliMi == false)
         {
-            rb.MovePosition(rb.position + Vector2.up * hiz * Time.deltaTime); //rb nin y ekseninde sï¿½rekli hareket etmesini saï¿½lï¿½yoruz.
+            rb.MovePosition(rb.position + Vector2.up * hiz * Time.deltaTime); //rb nin y ekseninde surekli hareket etmesini sagliyoruz.
         }
-        
     }
 
-   
-
-     void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        //kï¿½ï¿½ï¿½k ï¿½emberin temas durumunda durmasï¿½nï¿½ saï¿½lï¿½yoruz. Trigger yerine Collision da kullanï¿½labilirdi.
-        //Triggerda iï¿½inden geï¿½ilebilir triggerda en ufak bir temasta durmasï¿½nï¿½ saï¿½ladï¿½k
-
         if (col.gameObject.tag == "DonenBuyukCember")
         {
-            transform.SetParent(col.transform); //DonenbuyukCember tagï¿½na sahip ï¿½embere ï¿½arpan cisim onunchildï¿½ olsun ve onunla beraber dï¿½nsï¿½n
-            hareketKisitliMi= true;
+            transform.SetParent(col.transform);
+            hareketKisitliMi = true;
         }
 
         if (col.gameObject.tag == "KucukCember") //kucuk cemberler birbirlerine degerse
         {
             yonetici.GetComponent<OyununSonu>().OyunuBitir();
-            
-        }
+            //Oyunu kaybettiðine dair bir text eklenecek prefab içerisine text eklemeyi öðren!!!!!!!
 
+        }
 
     }
-
-  /*  void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag == "DonenBuyukCember")
-        {
-            hareketKisitliMi = true;
-        }
-    }*/
-
-
 }
