@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637762865690000000
-    m_Hash: 2538549607
+      ticks: 637762974220000000
+    m_Hash: 755480394
   m_LockFileStatus:
     m_FilePath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637762865690000000
-    m_Hash: 2752728092
+      ticks: 637762974220000000
+    m_Hash: 1503157601
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -261,12 +261,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ads.git
         revision: 0e92fa56fc4e4cd1fa305e76a911acdae6386b96
         path: 
-    - packageId: com.unity.analytics@3.6.11
+    - packageId: com.unity.analytics@3.6.12
       testable: 0
       isDirectDependency: 1
-      version: 3.6.11
+      version: 3.6.12
       source: 1
-      resolvedPath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Library/PackageCache/com.unity.analytics@3.6.11
+      resolvedPath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Library/PackageCache/com.unity.analytics@3.6.12
       assetPath: Packages/com.unity.analytics
       name: com.unity.analytics
       displayName: Analytics Library
@@ -383,13 +383,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637629809450000000
+      datePublishedTicks: 637692274360000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.analytics.git
-        revision: e79ad7c394f265365ea4389b6142b2ee72299037
+        revision: 16fe75b69f168b066926595ade9b0473c3b32c5f
         path: 
     - packageId: com.unity.collab-proxy@1.13.5
       testable: 0
@@ -603,7 +603,7 @@ m_PackageAssets:
         version: 1.1.1
       resolvedDependencies:
       - name: com.unity.test-framework
-        version: 1.1.29
+        version: 1.1.30
       - name: com.unity.ext.nunit
         version: 1.0.6
       - name: com.unity.modules.imgui
@@ -631,12 +631,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
         revision: abb44f053e9a41d2e00e149e32a19bcec76e98b4
         path: 
-    - packageId: com.unity.ide.visualstudio@2.0.11
+    - packageId: com.unity.ide.visualstudio@2.0.12
       testable: 0
       isDirectDependency: 1
-      version: 2.0.11
+      version: 2.0.12
       source: 1
-      resolvedPath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Library/PackageCache/com.unity.ide.visualstudio@2.0.11
+      resolvedPath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Library/PackageCache/com.unity.ide.visualstudio@2.0.12
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -692,7 +692,7 @@ m_PackageAssets:
         version: 1.1.9
       resolvedDependencies:
       - name: com.unity.test-framework
-        version: 1.1.29
+        version: 1.1.30
       - name: com.unity.ext.nunit
         version: 1.0.6
       - name: com.unity.modules.imgui
@@ -712,13 +712,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637613656180000000
+      datePublishedTicks: 637720564750000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-        revision: 680e06d94ffca728223ae2cb14bb919cd354e2c1
+        revision: 8d436ff053b9c59677b5e9799208143553cd02d9
         path: 
     - packageId: com.unity.ide.vscode@1.2.4
       testable: 0
@@ -968,12 +968,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.purchasing.git
         revision: 4dccbbbbdb61c481d208d59a92c0c058ccad4e32
         path: 
-    - packageId: com.unity.test-framework@1.1.29
+    - packageId: com.unity.test-framework@1.1.30
       testable: 0
       isDirectDependency: 1
-      version: 1.1.29
+      version: 1.1.30
       source: 1
-      resolvedPath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Library/PackageCache/com.unity.test-framework@1.1.29
+      resolvedPath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Library/PackageCache/com.unity.test-framework@1.1.30
       assetPath: Packages/com.unity.test-framework
       name: com.unity.test-framework
       displayName: Test Framework
@@ -1053,13 +1053,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637647922650000000
+      datePublishedTicks: 637702469360000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
-        revision: dac53542acdab7a12e9ebf111ac588d0e53cf483
+        url: https://github.com/Unity-Technologies/com.unity.test-framework.git
+        revision: 4a3f541cb46e2f6875b3a938daba8c7113020873
         path: 
     - packageId: com.unity.textmeshpro@3.0.6
       testable: 0
@@ -1381,69 +1381,6 @@ m_PackageAssets:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
         revision: 527e4364e28028f20f04fc51db671eb4bb910a26
-        path: 
-    - packageId: com.unity.ugui@1.0.0
-      testable: 0
-      isDirectDependency: 1
-      version: 1.0.0
-      source: 2
-      resolvedPath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Library/PackageCache/com.unity.ugui@1.0.0
-      assetPath: Packages/com.unity.ugui
-      name: com.unity.ugui
-      displayName: Unity UI
-      author:
-        name: 
-        email: 
-        url: 
-      category: 
-      type: 
-      description: "Unity UI is a UI toolkit for developing user interfaces for games
-        and applications. It is a GameObject-based UI system that uses Components
-        and the Game View to arrange, position, and style user interfaces. \u200B
-        You cannot use Unity UI to create or change user interfaces in the Unity
-        Editor."
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 1.0.0
-        compatible:
-        - 1.0.0
-        verified: 1.0.0
-      dependencies:
-      - name: com.unity.modules.ui
-        version: 1.0.0
-      - name: com.unity.modules.imgui
-        version: 1.0.0
-      resolvedDependencies:
-      - name: com.unity.modules.ui
-        version: 1.0.0
-      - name: com.unity.modules.imgui
-        version: 1.0.0
-      keywords:
-      - UI
-      - ugui
-      - Unity UI
-      - Canvas
-      registry:
-        id: 
-        name: 
-        url: 
-        scopes: []
-        isDefault: 0
-        capabilities: 0
-      hasRegistry: 0
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 0
-      documentationUrl: 
-      hasRepository: 0
-      repository:
-        type: 
-        url: 
-        revision: 
         path: 
     - packageId: com.unity.xr.legacyinputhelpers@2.1.8
       testable: 0
@@ -3260,6 +3197,69 @@ m_PackageAssets:
       - name: com.unity.modules.jsonserialize
         version: 1.0.0
       keywords: []
+      registry:
+        id: 
+        name: 
+        url: 
+        scopes: []
+        isDefault: 0
+        capabilities: 0
+      hasRegistry: 0
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 0
+      documentationUrl: 
+      hasRepository: 0
+      repository:
+        type: 
+        url: 
+        revision: 
+        path: 
+    - packageId: com.unity.ugui@1.0.0
+      testable: 0
+      isDirectDependency: 0
+      version: 1.0.0
+      source: 2
+      resolvedPath: /Users/zeynepgul/Documents/Projects/ambush-game/Ambush/Library/PackageCache/com.unity.ugui@1.0.0
+      assetPath: Packages/com.unity.ugui
+      name: com.unity.ugui
+      displayName: Unity UI
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: "Unity UI is a UI toolkit for developing user interfaces for games
+        and applications. It is a GameObject-based UI system that uses Components
+        and the Game View to arrange, position, and style user interfaces. \u200B
+        You cannot use Unity UI to create or change user interfaces in the Unity
+        Editor."
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 1.0.0
+        compatible:
+        - 1.0.0
+        verified: 1.0.0
+      dependencies:
+      - name: com.unity.modules.ui
+        version: 1.0.0
+      - name: com.unity.modules.imgui
+        version: 1.0.0
+      resolvedDependencies:
+      - name: com.unity.modules.ui
+        version: 1.0.0
+      - name: com.unity.modules.imgui
+        version: 1.0.0
+      keywords:
+      - UI
+      - ugui
+      - Unity UI
+      - Canvas
       registry:
         id: 
         name: 
