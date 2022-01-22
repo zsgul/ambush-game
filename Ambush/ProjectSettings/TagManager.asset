@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Pineapple
+  - Spikes
+  - Enemy
+  - Fire
+  - KucukCember
+  - DonenBuyukCember
+  - Yonetici
+  - Secim
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Wall
+  - Player
+  - 
+  - Player
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 813804163
+    locked: 0
+  - name: Foreground
+    uniqueID: 273693339
+    locked: 0
+  - name: Player
+    uniqueID: 2833406023
+    locked: 0
+  - name: Ground
+    uniqueID: 1799776875
+    locked: 0
+  - name: Secim
+    uniqueID: 2317479061
+    locked: 0
+  - name: Urunler
+    uniqueID: 3618576083
+    locked: 0
